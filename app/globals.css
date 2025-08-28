@@ -1,0 +1,114 @@
+/* src/app/globals.css */
+
+:root {
+  --background: #ffffff;
+  --foreground: #030303;
+}
+
+/* Variabili per i font */
+:root {
+  --font-jaldi: var(--font-jaldi);
+  --font-jersey: var(--font-jersey);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jaldi), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-jersey), Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Utility classes globali */
+.text-gradient {
+  color: transparent;
+  background: linear-gradient(to right, #6b46c1, #1e40af);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* Pattern di sfondo personalizzato */
+.bg-pattern {
+  --s: 200px;
+  --c1: #1f2937;
+  --c2: #6b7280;
+  --c3: #374151;
+
+  background: repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 50%) calc(var(--s)/2) calc(var(--s)*tan(30deg)/2),
+    repeating-conic-gradient(from 30deg, var(--c1) 0 60deg, var(--c2) 0 120deg, var(--c3) 0 50%);
+  background-size: var(--s) calc(var(--s)*tan(30deg));
+}
+
+/* Content grid system */
+.content-grid {
+  --spacing-xl: 4rem;
+  --spacing-lg: 2rem;
+  --spacing-md: 1rem;
+  --spacing-sm: .5rem;
+  --spacing-xs: .25rem;
+
+  --content-max-width: 56.25rem;
+  --breakout-max-width: 75rem;
+  --padding-inline: var(--spacing-md);
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr) 
+    [breakout-start] minmax(0, var(--breakout-size)) 
+    [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) 
+    [content-end] minmax(0, var(--breakout-size)) 
+    [breakout-end] minmax(var(--padding-inline), 1fr) 
+    [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+/* Scrollbar personalizzata */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

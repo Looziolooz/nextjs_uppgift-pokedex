@@ -1,0 +1,174 @@
+/* src/components/common/Footer/Footer.module.css */
+
+.footer {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-jersey), Arial, Helvetica, sans-serif;
+  letter-spacing: -0.025em;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #cccccc;
+  margin: 0;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.socialLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #888888;
+  transform: translateY(-2px);
+}
+
+.socialLink:active {
+  transform: translateY(0);
+}
+
+.socialIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.socialLink:hover .socialIcon {
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.3));
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 0;
+    margin-top: 3rem;
+  }
+  
+  .container {
+    gap: 1.25rem;
+  }
+  
+  .logoSection {
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .logoText {
+    font-size: 1.375rem;
+  }
+  
+  .tagline {
+    font-size: 0.95rem;
+  }
+  
+  .socialLinks {
+    gap: 1.25rem;
+  }
+  
+  .socialLink {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .socialIcon {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0;
+    margin-top: 2.5rem;
+  }
+  
+  .container {
+    gap: 1rem;
+    padding: 0 0.75rem;
+  }
+  
+  .logoSection {
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logoText {
+    font-size: 1.25rem;
+  }
+  
+  .tagline {
+    font-size: 0.9rem;
+  }
+  
+  .socialLinks {
+    gap: 1rem;
+  }
+  
+  .socialLink {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
