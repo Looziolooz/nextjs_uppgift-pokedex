@@ -4,42 +4,49 @@ import Link from 'next/link';
 import styles from './Navbar.module.css';
 import Image from 'next/image';
 
+// Interface för navigationsobjekt - definierar struktur för varje länk
 interface NavItem {
-  label: string;
-  href: string;
+  label: string;  // Text som visas för länken
+  href: string;   // URL som länken pekar till
 }
 
+// Array med alla navigationsalternativ
 const navItems: NavItem[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Pokedex', href: '/pokedex' },
-  { label: 'Types', href: '/types' },
-  { label: 'Favourites', href: '/favourites' },
+  { label: 'Hem', href: '/' },              // Startsida
+  { label: 'Pokédx', href: '/pokedex' },    // Fullständig Pokemon-lista
+  { label: 'Typer', href: '/types' },       // Pokemon-typer översikt
+  { label: 'Favoriter', href: '/favourites' }, // Sparade Pokemon
 ];
 
+// Huvudkomponent för navigationsmeny
 const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        {/* Logo Section */}
+        
+        {/* Logo-sektion som fungerar som länk till startsidan */}
         <Link href="/" className={styles.logoLink}>
           <div className={styles.logo}>
+            {/* Pokédx logotyp-bild */}
             <Image
               src="/Logo.png"
-              alt="Pokédex"
+              alt="Pokédx logotyp"
               width={40}
               height={40}
               className={styles.logoImage}
             />
-            <span className={styles.logoText}>Pokédex</span>
+            {/* Pokédx text bredvid logotypen */}
+            <span className={styles.logoText}>Pokédx</span>
           </div>
         </Link>
 
-        {/* Navigation Links */}
+        {/* Navigationslänkar */}
         <ul className={styles.navList}>
+          {/* Mappa över alla navigationsobjekt och skapa länkar */}
           {navItems.map((item) => (
             <li key={item.href} className={styles.navItem}>
               <Link href={item.href} className={styles.navLink}>
-                {item.label}
+                {item.label} {/* Visa länktexten */}
               </Link>
             </li>
           ))}

@@ -2,54 +2,59 @@
 import Image from 'next/image';
 import styles from './Footer.module.css';
 
+// Footer-komponent som visas på alla sidor
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Logo Section */}
+        
+        {/* Logo-sektion med bild och text */}
         <div className={styles.logoSection}>
           <Image
             src="/Logo.png"
-            alt="Pokédex"
+            alt="Pokédx logotyp"
             width={40}
             height={40}
             className={styles.logo}
           />
-          <span className={styles.logoText}>Pokédex</span>
+          <span className={styles.logoText}>Pokédx</span>
         </div>
 
-        {/* Tagline */}
+        {/* Tagline/slogan för appen */}
         <p className={styles.tagline}>
-          Explore the world of Pokémon
+          Utforska Pokémons värld
         </p>
 
-        {/* Social Links */}
+        {/* Sociala medier-länkar */}
         <div className={styles.socialLinks}>
+          {/* Facebook-länk */}
           <a
             href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" // Öppna i ny flik
+            rel="noopener noreferrer" // Säkerhetsåtgärd för externa länkar
             className={styles.socialLink}
-            aria-label="Visit our Facebook page"
+            aria-label="Besök vår Facebook-sida" // Tillgänglighet för skärmläsare
           >
             <Image
               src="/facebook.svg"
-              alt="Facebook"
+              alt="Facebook ikon"
               width={24}
               height={24}
               className={styles.socialIcon}
             />
           </a>
+          
+          {/* Instagram-länk */}
           <a
             href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            target="_blank" // Öppna i ny flik
+            rel="noopener noreferrer" // Säkerhetsåtgärd för externa länkar
             className={styles.socialLink}
-            aria-label="Visit our Instagram page"
+            aria-label="Besök vår Instagram-sida" // Tillgänglighet för skärmläsare
           >
             <Image
               src="/instagram.svg"
-              alt="Instagram"
+              alt="Instagram ikon"
               width={24}
               height={24}
               className={styles.socialIcon}
